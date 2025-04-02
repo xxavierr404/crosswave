@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: crosswave
+      MONGO_INITDB_ROOT_PASSWORD: 12345678
+      MONGO_INITDB_DATABASE: crosswave
+    ports:
+      - "27017:27017"

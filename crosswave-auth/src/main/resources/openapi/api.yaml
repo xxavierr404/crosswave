@@ -1,0 +1,16 @@
+openapi: 3.0.0
+info:
+  title: Crosswave Auth
+  description: Crosswave Auth service
+  version: 0.0.1
+servers:
+  - url: 'localhost:8080'
+paths:
+  /auth/v1/get-token:
+    $ref: "./endpoints/get-token.yaml"
+
+  /auth/v1/register:
+    $ref: "./endpoints/register.yaml"
+
+  /auth/v1/login:
+    $ref: "./endpoints/login.yaml"

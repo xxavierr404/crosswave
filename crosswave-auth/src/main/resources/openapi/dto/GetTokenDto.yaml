@@ -1,0 +1,14 @@
+GetTokenDto:
+  type: object
+  properties:
+    username:
+      type: string
+      description: Имя пользователя
+      example: "cool_musiciannnn"
+    password:
+      type: string
+      description: Пароль пользователя
+      example: "securepassword123"
+  required:
+    - username
+    - password
