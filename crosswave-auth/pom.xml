@@ -11,8 +11,8 @@
 	<groupId>com.xxavierr404</groupId>
 	<artifactId>crosswave-auth</artifactId>
 	<version>0.0.1</version>
-	<name>crosswave</name>
-	<description>Crosswave - platform for finding friends based on music tastes</description>
+	<name>crosswave-auth</name>
+	<description>Crosswave authentication module</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -45,10 +45,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.fasterxml.jackson.module</groupId>
-			<artifactId>jackson-module-kotlin</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-reflect</artifactId>
 		</dependency>
@@ -78,21 +74,6 @@
 			<version>5.0.0-beta0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.6.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.swagger.core.v3</groupId>
-			<artifactId>swagger-annotations</artifactId>
-			<version>2.2.25</version>
-		</dependency>
-		<dependency>
-			<groupId>io.swagger.parser.v3</groupId>
-			<artifactId>swagger-parser</artifactId>
-			<version>2.1.22</version>
-		</dependency>
-		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
 			<version>0.12.6</version>
@@ -116,6 +97,11 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.xxavierr404</groupId>
+			<artifactId>crosswave-auth-openapi</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
 
@@ -145,27 +131,6 @@
 						<version>${kotlin.version}</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			<plugin>
-				<groupId>org.openapitools</groupId>
-				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>7.12.0</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/openapi/api.yaml</inputSpec>
-							<generatorName>kotlin-spring</generatorName>
-							<configOptions>
-								<sourceFolder>src/gen/kotlin/main</sourceFolder>
-								<useSpringBoot3>true</useSpringBoot3>
-								<gradleBuildFile>false</gradleBuildFile>
-							</configOptions>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

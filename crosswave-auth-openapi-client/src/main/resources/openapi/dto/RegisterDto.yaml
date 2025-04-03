@@ -1,0 +1,19 @@
+RegisterDto:
+  type: object
+  properties:
+    username:
+      type: string
+      description: Имя пользователя
+      example: "john_doe"
+    password:
+      type: string
+      description: Пароль пользователя
+      example: "securepassword123"
+    email:
+      type: string
+      description: Электронная почта
+      example: "john.doe@example.com"
+  required:
+    - username
+    - password
+    - email

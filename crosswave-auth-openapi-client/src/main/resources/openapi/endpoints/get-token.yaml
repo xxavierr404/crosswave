@@ -1,0 +1,35 @@
+post:
+  summary: Вход в систему
+  description: Авторизация пользователя по логину и паролю.
+  operationId: getToken
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../dto/GetTokenDto.yaml#/GetTokenDto'
+  responses:
+    '200':
+      description: Успешный вход в систему
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/TokenResponseDto.yaml#/TokenResponseDto'
+    '400':
+      description: Некорректные данные для входа
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'
+    '401':
+      description: Неверные логин или пароль
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'
+    '500':
+      description: Ошибка сервера
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'

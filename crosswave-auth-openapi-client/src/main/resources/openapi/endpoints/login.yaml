@@ -1,0 +1,28 @@
+post:
+  summary: Чтение данных о пользователе по токену
+  operationId: login
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../dto/LoginRequestDto.yaml#/LoginRequestDto'
+  responses:
+    '200':
+      description: Успешный выход из системы
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/UserDataDto.yaml#/UserDataDto'
+    '400':
+      description: Ошибка в токене
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'
+    '500':
+      description: Ошибка сервера
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'

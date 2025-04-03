@@ -1,0 +1,12 @@
+ErrorDto:
+  type: object
+  properties:
+    code:
+      type: integer
+      description: Код ошибки
+    message:
+      type: string
+      description: Описание ошибки
+  required:
+    - code
+    - message
