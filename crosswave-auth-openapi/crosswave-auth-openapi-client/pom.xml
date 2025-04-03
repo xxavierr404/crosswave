@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.xxavierr404</groupId>
-    <artifactId>crosswave-auth-openapi</artifactId>
+    <artifactId>crosswave-auth-openapi-client</artifactId>
     <version>0.0.1</version>
 
     <properties>
@@ -24,10 +24,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
@@ -57,12 +53,14 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/schema/api.yaml</inputSpec>
-                            <generatorName>kotlin-spring</generatorName>
+                            <inputSpec>${project.basedir}/../schema/api.yaml</inputSpec>
+                            <generatorName>kotlin</generatorName>
                             <configOptions>
                                 <sourceFolder>src/gen/kotlin/main</sourceFolder>
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <gradleBuildFile>false</gradleBuildFile>
+                                <library>jvm-spring-webclient</library>
+                                <serializationLibrary>jackson</serializationLibrary>
                             </configOptions>
                         </configuration>
                     </execution>
@@ -75,7 +73,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test-junit5</artifactId>
-            <version>${kotlin.version}</version>
+            <version>2.0.10</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -87,7 +85,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
-            <version>${kotlin.version}</version>
+            <version>2.0.10</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
@@ -109,6 +107,11 @@
             <artifactId>jackson-module-kotlin</artifactId>
             <version>2.18.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+            <version>6.1.5</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
-
 </project>

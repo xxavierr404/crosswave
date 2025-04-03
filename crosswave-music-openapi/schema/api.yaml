@@ -1,0 +1,10 @@
+openapi: 3.0.0
+info:
+  title: Crosswave Auth
+  description: Crosswave Auth service
+  version: 0.0.1
+servers:
+  - url: 'localhost:8080'
+paths:
+  /test:
+    $ref: "./endpoints/test.yaml"

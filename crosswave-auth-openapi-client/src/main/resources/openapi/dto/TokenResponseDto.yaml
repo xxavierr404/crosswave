@@ -1,9 +1,0 @@
-TokenResponseDto:
-  type: object
-  properties:
-    token:
-      type: string
-      description: JWT-токен авторизации
-      example: "xxxxxx.xxxxxx.xxxxxx"
-  required:
-    - token

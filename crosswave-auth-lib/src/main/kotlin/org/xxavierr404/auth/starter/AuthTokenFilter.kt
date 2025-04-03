@@ -6,6 +6,8 @@ import jakarta.servlet.ServletResponse
 import jakarta.servlet.http.HttpServletRequest
 import org.openapitools.client.apis.DefaultApi
 import org.openapitools.client.models.LoginRequestDto
+import org.springframework.security.authentication.ott.OneTimeTokenAuthenticationToken
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.filter.GenericFilterBean
 
 class AuthTokenFilter(
@@ -20,7 +22,10 @@ class AuthTokenFilter(
             val user = authApiClient.login(
                 LoginRequestDto(accessToken)
             )
-            httpRequest.setAttribute("user", user)
+            SecurityContextHolder.getContext().authentication = OneTimeTokenAuthenticationToken(
+                user,
+                accessToken
+            )
         }
 
         chain.doFilter(request, response)
