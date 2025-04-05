@@ -5,27 +5,58 @@ services:
       MONGO_INITDB_ROOT_USERNAME: crosswave
       MONGO_INITDB_ROOT_PASSWORD: 12345678
       MONGO_INITDB_DATABASE: crosswave
+    networks:
+      - main_net
+
+  eureka:
+    build:
+      context: .
+      dockerfile: ./crosswave-service-discovery/Dockerfile
     ports:
-      - "27017:27017"
+      - "8761:8761"
+    networks:
+      - main_net
+
+  gateway:
+    build:
+      context: .
+      dockerfile: ./crosswave-gateway/Dockerfile
+    depends_on:
+      - auth
+      - music
+      - eureka
+    ports:
+      - "80:8080"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
+    networks:
+      - main_net
 
   auth:
     build:
       context: .
       dockerfile: ./crosswave-auth/Dockerfile
-    ports:
-      - "8080:8080"
     depends_on:
       - mongo
+      - eureka
     environment:
       CROSSWAVE_MONGODB_CONNECTIONSTRING: "mongodb://crosswave:12345678@mongo:27017/admin"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
+    networks:
+      - main_net
 
   music:
     build:
       context: .
       dockerfile: ./crosswave-music/Dockerfile
-    ports:
-      - "8081:8080"
     depends_on:
       - mongo
+      - eureka
     environment:
       CROSSWAVE_AUTH_API_BASEURL: "http://auth:8080"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
+    networks:
+      - main_net
+
+networks:
+  main_net:
