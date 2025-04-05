@@ -1,0 +1,46 @@
+get:
+  summary: Потоковое вещание трека
+  operationId: stream
+  parameters:
+    - name: X-User-Id
+      in: header
+      required: true
+      schema:
+        type: string
+        format: UUID
+    - name: trackId
+      in: query
+      required: true
+      schema:
+        type: string
+        format: UUID
+    - name: offset
+      in: query
+      required: true
+      schema:
+        type: integer
+    - name: length
+      in: query
+      required: true
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: Файл трека
+      content:
+        audio/mpeg:
+          schema:
+            type: string
+            format: binary
+    '403':
+      description: Нет доступа к треку
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'
+    '500':
+      description: Ошибка сервера
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'

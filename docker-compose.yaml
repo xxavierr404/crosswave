@@ -47,6 +47,7 @@ services:
     depends_on:
       - mongo
     environment:
+      CROSSWAVE_MONGODB_CONNECTIONSTRING: "mongodb://crosswave:12345678@mongo:27017/admin"
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
     networks:
       - main_net
