@@ -1,12 +1,13 @@
 post:
   summary: Чтение данных о пользователе по токену
   operationId: login
-  requestBody:
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: '../dto/LoginRequestDto.yaml#/LoginRequestDto'
+  parameters:
+    - name: X-User-Id
+      in: header
+      required: true
+      schema:
+        type: string
+        format: UUID
   responses:
     '200':
       description: Успешный выход из системы

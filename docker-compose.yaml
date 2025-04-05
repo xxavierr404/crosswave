@@ -21,10 +21,6 @@ services:
     build:
       context: .
       dockerfile: ./crosswave-gateway/Dockerfile
-    depends_on:
-      - auth
-      - music
-      - eureka
     ports:
       - "80:8080"
     environment:
@@ -38,7 +34,6 @@ services:
       dockerfile: ./crosswave-auth/Dockerfile
     depends_on:
       - mongo
-      - eureka
     environment:
       CROSSWAVE_MONGODB_CONNECTIONSTRING: "mongodb://crosswave:12345678@mongo:27017/admin"
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
@@ -51,9 +46,7 @@ services:
       dockerfile: ./crosswave-music/Dockerfile
     depends_on:
       - mongo
-      - eureka
     environment:
-      CROSSWAVE_AUTH_API_BASEURL: "http://auth:8080"
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
     networks:
       - main_net

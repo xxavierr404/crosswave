@@ -1,7 +1,7 @@
 package com.xxavierr404.crosswave.auth.dao.mongo
 
+import com.mongodb.client.MongoCollection
 import com.mongodb.client.model.Filters
-import com.mongodb.kotlin.client.MongoCollection
 import com.xxavierr404.crosswave.auth.dao.UserCredentialsDao
 import com.xxavierr404.crosswave.auth.domain.UserCredentials
 import org.springframework.stereotype.Component
