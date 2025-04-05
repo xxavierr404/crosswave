@@ -1,11 +1,11 @@
 package com.xxavierr404.crosswave.auth.controller
 
 import com.xxavierr404.crosswave.auth.service.AuthService
-import org.openapitools.api.AuthApiController
-import org.openapitools.model.*
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
+import org.xxavierr404.crosswave.auth.api.apis.AuthApiController
+import org.xxavierr404.crosswave.auth.api.models.*
 
 @RestController
 class AuthController(

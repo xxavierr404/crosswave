@@ -1,0 +1,23 @@
+services:
+  mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: crosswave
+      MONGO_INITDB_ROOT_PASSWORD: 12345678
+      MONGO_INITDB_DATABASE: crosswave
+    ports:
+      - "27017:27017"
+
+  auth:
+    build:
+      context: .
+      dockerfile: ./crosswave-auth/Dockerfile
+    ports:
+      - "8080:8080"
+
+  music:
+    build:
+      context: .
+      dockerfile: ./crosswave-music/Dockerfile
+    ports:
+      - "8081:8080"

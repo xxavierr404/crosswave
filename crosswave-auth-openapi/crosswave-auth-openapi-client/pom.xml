@@ -11,7 +11,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.code.style>official</kotlin.code.style>
-        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
+        <java.version>21</java.version>
         <kotlin.version>1.9.25</kotlin.version>
     </properties>
 
@@ -27,6 +27,22 @@
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <source>target/generated-sources/annotations</source>
+                                <source>target/generated-sources/openapi/src/gen/kotlin/main</source>
+                            </sourceDirs>
+                        </configuration>
+                    </execution>
+                </executions>
                 <configuration>
                     <args>
                         <arg>-Xjsr305=strict</arg>
@@ -56,9 +72,9 @@
                             <inputSpec>${project.basedir}/../schema/api.yaml</inputSpec>
                             <generatorName>kotlin</generatorName>
                             <configOptions>
+                                <packageName>org.xxavierr404.crosswave.auth.client</packageName>
                                 <sourceFolder>src/gen/kotlin/main</sourceFolder>
                                 <useSpringBoot3>true</useSpringBoot3>
-                                <gradleBuildFile>false</gradleBuildFile>
                                 <library>jvm-spring-webclient</library>
                                 <serializationLibrary>jackson</serializationLibrary>
                             </configOptions>
@@ -73,7 +89,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test-junit5</artifactId>
-            <version>2.0.10</version>
+            <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -85,12 +101,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
-            <version>2.0.10</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.6.0</version>
+            <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
@@ -110,8 +121,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webflux</artifactId>
-            <version>6.1.5</version>
-            <scope>compile</scope>
+            <version>6.2.5</version>
         </dependency>
     </dependencies>
 </project>

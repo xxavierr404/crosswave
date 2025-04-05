@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.xxavierr404</groupId>
 	<artifactId>crosswave-music</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>crosswave-music</name>
 	<description>Music storage service for crosswave</description>
 	<url/>
@@ -36,22 +36,8 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcprov-jdk18on</artifactId>
-			<version>1.78.1</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.module</groupId>
-			<artifactId>jackson-module-kotlin</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.jetbrains.kotlin</groupId>
-			<artifactId>kotlin-reflect</artifactId>
-			<version>${kotlin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
@@ -89,12 +75,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.xxavierr404</groupId>
-			<artifactId>crosswave-auth-lib</artifactId>
+			<artifactId>crosswave-music-openapi</artifactId>
 			<version>0.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.xxavierr404</groupId>
-			<artifactId>crosswave-music-openapi</artifactId>
+			<artifactId>crosswave-auth-openapi-client</artifactId>
 			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
