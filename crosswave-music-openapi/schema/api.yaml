@@ -1,10 +1,16 @@
 openapi: 3.0.0
 info:
-  title: Crosswave Auth
-  description: Crosswave Auth service
+  title: Crosswave Music
+  description: Crosswave Music file service
   version: 0.0.1
 servers:
   - url: 'localhost:8080'
 paths:
-  /music/test:
-    $ref: "./endpoints/test.yaml"
+  /music/v1/upload:
+    $ref: "./endpoints/upload.yaml"
+
+  /music/v1/download:
+    $ref: "./endpoints/download.yaml"
+
+  /music/v1/get-info:
+    $ref: "./endpoints/get-info.yaml"

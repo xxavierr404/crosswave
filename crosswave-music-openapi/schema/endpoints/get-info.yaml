@@ -1,6 +1,6 @@
-post:
-  summary: Чтение данных о пользователе по токену
-  operationId: login
+get:
+  summary: Получить информацию о треке
+  operationId: getInfo
   parameters:
     - name: X-User-Id
       in: header
@@ -8,15 +8,21 @@ post:
       schema:
         type: string
         format: UUID
+    - name: trackId
+      in: query
+      required: true
+      schema:
+        type: string
+        format: UUID
   responses:
     '200':
-      description: Успешный выход из системы
+      description: Информация о треке
       content:
         application/json:
           schema:
-            $ref: '../dto/UserDataDto.yaml#/UserDataDto'
-    '400':
-      description: Ошибка в токене
+            $ref: '../dto/TrackInfo.yaml#/TrackInfo'
+    '403':
+      description: Нет доступа к треку
       content:
         application/json:
           schema:

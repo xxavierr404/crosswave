@@ -1,0 +1,46 @@
+post:
+  summary: Загрузить трек
+  operationId: upload
+  parameters:
+    - name: X-User-Id
+      in: header
+      required: true
+      schema:
+        type: string
+        format: UUID
+    - name: author
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: name
+      in: query
+      required: true
+      schema:
+        type: string
+  requestBody:
+    required: true
+    content:
+      audio/mpeg:
+        schema:
+          type: string
+          format: binary
+  responses:
+    '200':
+      description: Информация о загруженном треке
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/TrackInfo.yaml#/TrackInfo'
+    '401':
+      description: Пользователь не авторизован
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'
+    '500':
+      description: Ошибка сервера
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'
