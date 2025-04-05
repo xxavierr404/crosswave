@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration
 class MongoUserCredentialsDaoConfiguration {
     @Bean
     fun mongoClient(
-        @Value("\${mongo.connection-string}") connectionString: String,
+        @Value("\${crosswave.mongodb.connection-string}") connectionString: String,
     ) = MongoClient.create(connectionString)
 
     @Bean
