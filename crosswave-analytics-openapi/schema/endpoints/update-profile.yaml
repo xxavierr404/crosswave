@@ -1,6 +1,6 @@
-get:
-  summary: Скачать трек
-  operationId: download
+post:
+  summary: Обновить данные о профиле
+  operationId: getProfile
   parameters:
     - name: X-User-Id
       in: header
@@ -8,20 +8,19 @@ get:
       schema:
         type: string
         format: UUID
-    - name: trackId
-      in: query
-      required: true
-      schema:
-        type: string
-        format: UUID
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../dto/UpdateUserProfileDto.yaml#/UpdateUserProfileDto'
   responses:
     '200':
-      description: Файл трека
+      description: Информация о пользователе
       content:
-        audio/mpeg:
+        application/json:
           schema:
-            type: string
-            format: binary
+            $ref: '../dto/UserProfileDto.yaml#/UserProfileDto'
     '403':
       description: Нет доступа к треку
       content:

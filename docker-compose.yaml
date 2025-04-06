@@ -37,6 +37,7 @@ services:
     environment:
       CROSSWAVE_MONGODB_CONNECTIONSTRING: "mongodb://crosswave:12345678@mongo:27017/admin"
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
+      SPRING_KAFKA_BOOTSTRAPSERVERS: "kafka:9092"
     networks:
       - main_net
 
@@ -49,6 +50,30 @@ services:
     environment:
       CROSSWAVE_MONGODB_CONNECTIONSTRING: "mongodb://crosswave:12345678@mongo:27017/admin"
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
+    networks:
+      - main_net
+
+  kafka:
+    image: apache/kafka-native:4.0.0
+    environment:
+      KAFKA_PROCESS_ROLES: "broker,controller"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LISTENERS: "PLAINTEXT://:9092,CONTROLLER://:9093"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT"
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:9092"
+      KAFKA_BROKER_ID: "1"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:9093"
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+    networks:
+      - main_net
+
+  ui:
+    image: provectuslabs/kafka-ui:v0.4.0
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_BOOTSTRAP_SERVERS: "kafka:9092"
+      KAFKA_CLUSTERS_0_NAME: "kraft"
     networks:
       - main_net
 

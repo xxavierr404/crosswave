@@ -2,6 +2,7 @@ package com.xxavierr404.crosswave.auth.service
 
 import com.xxavierr404.crosswave.auth.dao.UserCredentialsDao
 import com.xxavierr404.crosswave.auth.domain.UserCredentials
+import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 import java.util.*
@@ -11,6 +12,7 @@ class AuthService(
     private val userCredentialsDao: UserCredentialsDao,
     private val passwordEncoder: PasswordEncoder,
     private val jwtService: JwtService,
+    private val kafkaTemplate: KafkaTemplate<UUID, String>,
 ) {
     fun register(login: String, password: String, email: String): UserCredentials {
         if (userCredentialsDao.getByLogin(login) != null) {
@@ -30,6 +32,9 @@ class AuthService(
                 passwordHash = passwordEncoder.encode(password),
             )
         )
+
+        kafkaTemplate.send("auth-events", id, "REGISTER").join()
+
         return userCredentialsDao.getById(id)!!
     }
 

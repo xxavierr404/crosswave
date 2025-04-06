@@ -1,0 +1,13 @@
+UpdateUserProfileDto:
+  type: object
+  properties:
+    name:
+      type: string
+    surname:
+      type: string
+    bio:
+      type: string
+  required:
+    - name
+    - surname
+    - bio
