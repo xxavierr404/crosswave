@@ -2,6 +2,9 @@ package com.xxavierr404.crosswave.auth.service
 
 import com.xxavierr404.crosswave.auth.dao.UserCredentialsDao
 import com.xxavierr404.crosswave.auth.domain.UserCredentials
+import com.xxavierr404.crosswave.kafka.events.model.JwtService
+import com.xxavierr404.crosswave.kafka.events.model.auth.AuthEvent
+import com.xxavierr404.crosswave.kafka.events.model.auth.AuthEventType
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -12,7 +15,7 @@ class AuthService(
     private val userCredentialsDao: UserCredentialsDao,
     private val passwordEncoder: PasswordEncoder,
     private val jwtService: JwtService,
-    private val kafkaTemplate: KafkaTemplate<UUID, String>,
+    private val kafkaTemplate: KafkaTemplate<UUID, AuthEvent>,
 ) {
     fun register(login: String, password: String, email: String): UserCredentials {
         if (userCredentialsDao.getByLogin(login) != null) {
@@ -24,16 +27,25 @@ class AuthService(
         }
 
         val id = UUID.randomUUID()
-        userCredentialsDao.createUser(
-            UserCredentials(
-                id = id,
-                login = login,
-                email = email,
-                passwordHash = passwordEncoder.encode(password),
-            )
-        )
 
-        kafkaTemplate.send("auth-events", id, "REGISTER").join()
+        try {
+            userCredentialsDao.createUser(
+                UserCredentials(
+                    id = id,
+                    login = login,
+                    email = email,
+                    passwordHash = passwordEncoder.encode(password),
+                )
+            )
+
+            kafkaTemplate.send(
+                "auth-events",
+                UUID.randomUUID(),
+                AuthEvent(AuthEventType.REGISTER, id)
+            ).join()
+        } catch (exception: Exception) {
+            userCredentialsDao.deleteUser(id)
+        }
 
         return userCredentialsDao.getById(id)!!
     }

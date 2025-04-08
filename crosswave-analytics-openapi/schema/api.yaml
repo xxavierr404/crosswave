@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Crosswave Analytics
-  description: Crosswave Analytics file service
+  description: Crosswave Analytics and profiles service
   version: 0.0.1
 servers:
   - url: 'localhost:8080'
@@ -11,3 +11,9 @@ paths:
 
   /profile/v1/update:
     $ref: "./endpoints/update-profile.yaml"
+
+  /profile/v1/like:
+    $ref: "./endpoints/like-track.yaml"
+
+  /profile/v1/dislike:
+    $ref: "./endpoints/dislike-track.yaml"

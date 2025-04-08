@@ -24,7 +24,7 @@ class MusicController(
         offset: Int,
         length: Int,
     ): ResponseEntity<Resource> {
-        val fileResource = musicService.downloadTrack(UUID.fromString(trackId), offset, length)?.let {
+        val fileResource = musicService.streamTrack(UUID.fromString(xUserId), UUID.fromString(trackId), offset, length)?.let {
             ByteArrayResource(it)
         }
 
@@ -33,23 +33,25 @@ class MusicController(
     }
 
     override fun getInfo(xUserId: String, trackId: String): ResponseEntity<TrackInfo> {
-        return musicService.readInfo(UUID.fromString(trackId))?.let { ResponseEntity.ok(it.toDto()) }
+        return musicService.readInfo(UUID.fromString(xUserId), UUID.fromString(trackId))
+            ?.let { ResponseEntity.ok(it.toDto()) }
             ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
     }
 
     override fun upload(xUserId: String, file: MultipartFile,  author: String, name: String): ResponseEntity<TrackInfo> {
         val trackId = UUID.randomUUID()
+        val userId = UUID.fromString(xUserId)
         musicService.uploadTrack(
             MusicInfo(
                 trackId,
-                UUID.fromString(xUserId),
+                userId,
                 author,
                 name,
             ),
             file.bytes
         )
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(musicService.readInfo(trackId)!!.toDto())
+        return ResponseEntity.status(HttpStatus.CREATED).body(musicService.readInfo(userId, trackId)!!.toDto())
     }
 }
 

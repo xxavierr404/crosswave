@@ -1,6 +1,6 @@
 post:
-  summary: Обновить данные о профиле
-  operationId: updateProfile
+  summary: Удалить трек из любимых
+  operationId: dislikeTrack
   parameters:
     - name: X-User-Id
       in: header
@@ -8,12 +8,12 @@ post:
       schema:
         type: string
         format: UUID
-  requestBody:
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: '../dto/UpdateUserProfileDto.yaml#/UpdateUserProfileDto'
+    - name: trackId
+      in: query
+      required: true
+      schema:
+        type: string
+        format: UUID
   responses:
     '200':
       description: Информация о пользователе

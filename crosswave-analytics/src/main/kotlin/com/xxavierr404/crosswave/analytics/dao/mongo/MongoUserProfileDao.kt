@@ -21,6 +21,12 @@ class MongoUserProfileDao(
         )
     }
 
+    override fun findOne(userId: UUID): UserProfile? {
+        return collection.find(
+            Filters.eq("_id", userId)
+        ).firstOrNull()?.toModel()
+    }
+
     override fun likeTrack(userId: UUID, trackId: UUID) {
         collection.updateOne(
             Filters.eq("_id", userId),

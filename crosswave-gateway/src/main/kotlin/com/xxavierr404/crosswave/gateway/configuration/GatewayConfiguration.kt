@@ -1,6 +1,6 @@
 package com.xxavierr404.crosswave.gateway.configuration
 
-import com.xxavierr404.crosswave.auth.service.JwtService
+import com.xxavierr404.crosswave.kafka.events.model.JwtService
 import com.xxavierr404.crosswave.gateway.filters.EnrichWithUserDataFilter
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory.NameConfig
@@ -36,6 +36,17 @@ class GatewayConfiguration {
                         .filter(enrichWithUserDataFilter.apply(""))
                 }
                 .uri("lb://crosswave-music")
+        }
+        .route("profile") { route ->
+            route.path("/profile/**")
+                .filters {
+                    val userIdHeader = NameConfig()
+                    userIdHeader.name = "X-User-Id"
+                    it
+                        .filter(RemoveRequestHeaderGatewayFilterFactory().apply(userIdHeader))
+                        .filter(enrichWithUserDataFilter.apply(""))
+                }
+                .uri("lb://crosswave-analytics")
         }.build()
 
     @Bean

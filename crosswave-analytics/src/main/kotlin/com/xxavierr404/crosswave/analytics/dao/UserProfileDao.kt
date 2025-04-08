@@ -6,6 +6,7 @@ import java.util.*
 interface UserProfileDao {
     fun createOne(profile: UserProfile)
     fun updateOne(profile: UserProfile)
+    fun findOne(userId: UUID): UserProfile?
 
     fun likeTrack(userId: UUID, trackId: UUID)
     fun unlikeTrack(userId: UUID, trackId: UUID)

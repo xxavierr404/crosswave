@@ -1,6 +1,6 @@
 package com.xxavierr404.crosswave.gateway.filters
 
-import com.xxavierr404.crosswave.auth.service.JwtService
+import com.xxavierr404.crosswave.kafka.events.model.JwtService
 import org.springframework.cloud.gateway.filter.GatewayFilter
 import org.springframework.cloud.gateway.filter.GatewayFilterChain
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory

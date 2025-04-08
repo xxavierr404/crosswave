@@ -1,6 +1,6 @@
 package com.xxavierr404.crosswave.auth.configuration
 
-import com.xxavierr404.crosswave.auth.service.JwtService
+import com.xxavierr404.crosswave.kafka.events.model.JwtService
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

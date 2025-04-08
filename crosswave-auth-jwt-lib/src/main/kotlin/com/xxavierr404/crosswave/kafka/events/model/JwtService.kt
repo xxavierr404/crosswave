@@ -1,4 +1,4 @@
-package com.xxavierr404.crosswave.auth.service
+package com.xxavierr404.crosswave.kafka.events.model
 
 import com.xxavierr404.crosswave.auth.domain.UserCredentials
 import io.jsonwebtoken.Jwts
