@@ -9,7 +9,11 @@ import java.util.*
 open class MusicEventsProcessor(
     private val analyticRecordsDao: AnalyticRecordsDao
 ) {
-    @KafkaListener(topics = ["music-events"], groupId = "analytics-group")
+    @KafkaListener(
+        topics = ["music-events"],
+        groupId = "analytics-group",
+        containerFactory = "musicEventKafkaListenerContainerFactory"
+    )
     open fun storeMusicEvent(musicEvent: MusicEvent) {
         analyticRecordsDao.insertOne(
             AnalyticRecord(

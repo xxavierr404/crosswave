@@ -9,7 +9,11 @@ import org.springframework.kafka.annotation.KafkaListener
 open class AuthEventsProcessor(
     private val userProfileDao: UserProfileDao,
 ) {
-    @KafkaListener(topics = ["auth-events"])
+    @KafkaListener(
+        topics = ["auth-events"],
+        groupId = "auth-group",
+        containerFactory = "authEventListenerContainerFactory"
+    )
     open fun registerNewUser(authEvent: AuthEvent) {
         if (authEvent.type == AuthEventType.REGISTER) {
             userProfileDao.createOne(UserProfile(

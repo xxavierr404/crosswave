@@ -42,7 +42,7 @@ class KafkaConfiguration {
     }
 
     @Bean
-    fun kafkaListenerContainerFactory(): ConcurrentKafkaListenerContainerFactory<UUID, AuthEvent> {
+    fun authEventListenerContainerFactory(): ConcurrentKafkaListenerContainerFactory<UUID, AuthEvent> {
         val factory = ConcurrentKafkaListenerContainerFactory<UUID, AuthEvent>()
         factory.consumerFactory = authEventConsumerFactory()
         return factory
@@ -71,7 +71,7 @@ class KafkaConfiguration {
     }
 
     @Bean
-    fun musicKafkaListenerContainerFactory(): ConcurrentKafkaListenerContainerFactory<UUID, MusicEvent> {
+    fun musicEventKafkaListenerContainerFactory(): ConcurrentKafkaListenerContainerFactory<UUID, MusicEvent> {
         val factory = ConcurrentKafkaListenerContainerFactory<UUID, MusicEvent>()
         factory.consumerFactory = musicEventConsumerFactory()
         return factory

@@ -50,6 +50,7 @@ services:
     environment:
       CROSSWAVE_MONGODB_CONNECTIONSTRING: "mongodb://crosswave:12345678@mongo:27017/admin"
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
+      SPRING_KAFKA_BOOTSTRAPSERVERS: "kafka:9092"
     networks:
       - main_net
 
@@ -89,11 +90,6 @@ services:
     environment:
       KAFKA_CLUSTERS_0_BOOTSTRAP_SERVERS: "kafka:9092"
       KAFKA_CLUSTERS_0_NAME: "kraft"
-    networks:
-      - main_net
-
-  spark:
-    image: spark:scala2.13-java21-python3-ubuntu
     networks:
       - main_net
 
