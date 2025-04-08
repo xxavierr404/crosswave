@@ -92,5 +92,10 @@ services:
     networks:
       - main_net
 
+  spark:
+    image: spark:scala2.13-java21-python3-ubuntu
+    networks:
+      - main_net
+
 networks:
   main_net:

@@ -11,7 +11,7 @@ import java.util.*
 
 @Configuration
 @Import(
-    MongoUserProfileDaoConfiguration::class,
+    MongoDaoConfiguration::class,
     KafkaConfiguration::class,
 )
 class UserProfileServiceConfiguration {
