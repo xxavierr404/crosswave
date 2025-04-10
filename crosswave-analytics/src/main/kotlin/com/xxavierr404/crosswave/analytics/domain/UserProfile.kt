@@ -7,5 +7,6 @@ data class UserProfile(
     val name: String,
     val surname: String,
     val bio: String,
-    val likedTracks: List<UUID>,
+    val likedTracks: List<UUID> = listOf(),
+    val subscriptions: Set<UUID> = setOf(),
 )

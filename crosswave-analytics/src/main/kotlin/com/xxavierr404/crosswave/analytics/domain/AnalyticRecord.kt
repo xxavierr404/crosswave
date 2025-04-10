@@ -7,4 +7,5 @@ data class AnalyticRecord(
     val eventType: String,
     val userId: UUID,
     val trackId: UUID? = null,
+    val targetUserId: UUID? = null,
 )

@@ -17,3 +17,9 @@ paths:
 
   /profile/v1/dislike:
     $ref: "./endpoints/dislike-track.yaml"
+
+  /profile/v1/subscribe:
+    $ref: "./endpoints/subscribe.yaml"
+
+  /profile/v1/unsubscribe:
+    $ref: "./endpoints/unsubscribe.yaml"

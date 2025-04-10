@@ -11,6 +11,7 @@ data class MongoUserProfile(
     val surname: String,
     val bio: String,
     val likedTracks: List<UUID>,
+    val subscriptions: List<UUID>,
 )
 
 fun MongoUserProfile.toModel() = UserProfile(
@@ -19,6 +20,7 @@ fun MongoUserProfile.toModel() = UserProfile(
     surname,
     bio,
     likedTracks,
+    subscriptions.toSet(),
 )
 
 fun UserProfile.toMongo() = MongoUserProfile(
@@ -27,4 +29,5 @@ fun UserProfile.toMongo() = MongoUserProfile(
     surname,
     bio,
     likedTracks,
+    subscriptions.toList()
 )

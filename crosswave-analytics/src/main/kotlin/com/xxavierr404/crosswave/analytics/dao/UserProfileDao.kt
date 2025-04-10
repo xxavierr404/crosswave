@@ -10,4 +10,7 @@ interface UserProfileDao {
 
     fun likeTrack(userId: UUID, trackId: UUID)
     fun unlikeTrack(userId: UUID, trackId: UUID)
+
+    fun subscribe(subscriber: UUID, userId: UUID)
+    fun unsubscribe(subscriber: UUID, userId: UUID)
 }

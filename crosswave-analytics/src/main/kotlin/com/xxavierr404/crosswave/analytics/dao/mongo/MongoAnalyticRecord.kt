@@ -8,5 +8,6 @@ data class MongoAnalyticRecord(
     val id: UUID,
     val eventType: String,
     val userId: UUID,
-    val trackId: UUID? = null
+    val trackId: UUID? = null,
+    val targetUserId: UUID? = null,
 )

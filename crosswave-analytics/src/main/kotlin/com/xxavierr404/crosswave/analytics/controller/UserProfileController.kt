@@ -55,6 +55,20 @@ class UserProfileController(
         return profileService.findProfile(userId)?.let { ResponseEntity.ok(it.toDto()) }
             ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
     }
+
+    override fun subscribe(xUserId: String, targetUserId: String): ResponseEntity<UserProfileDto> {
+        val userId = UUID.fromString(xUserId)
+        profileService.subscribe(userId, UUID.fromString(targetUserId))
+        return profileService.findProfile(userId)?.let { ResponseEntity.ok(it.toDto()) }
+            ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
+    }
+
+    override fun unsubscribe(xUserId: String, targetUserId: String): ResponseEntity<UserProfileDto> {
+        val userId = UUID.fromString(xUserId)
+        profileService.unsubscribe(userId, UUID.fromString(targetUserId))
+        return profileService.findProfile(userId)?.let { ResponseEntity.ok(it.toDto()) }
+            ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
+    }
 }
 
 private fun UserProfile.toDto() = UserProfileDto(
@@ -62,5 +76,6 @@ private fun UserProfile.toDto() = UserProfileDto(
     name,
     surname,
     bio,
-    likedTracks
+    likedTracks,
+    subscriptions.map { it.toString() },
 )

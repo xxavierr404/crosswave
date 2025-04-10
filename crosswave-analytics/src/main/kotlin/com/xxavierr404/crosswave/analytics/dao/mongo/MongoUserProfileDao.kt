@@ -40,4 +40,18 @@ class MongoUserProfileDao(
             Updates.pull("likedTracks", trackId)
         )
     }
+
+    override fun subscribe(subscriber: UUID, userId: UUID) {
+        collection.updateOne(
+            Filters.eq("_id", subscriber),
+            Updates.addToSet("subscriptions", userId)
+        )
+    }
+
+    override fun unsubscribe(subscriber: UUID, userId: UUID) {
+        collection.updateOne(
+            Filters.eq("_id", subscriber),
+            Updates.pull("subscriptions", userId)
+        )
+    }
 }

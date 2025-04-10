@@ -20,8 +20,7 @@ open class AuthEventsProcessor(
                 authEvent.userId,
                 "Crosswave",
                 "User",
-                "Sample bio",
-                listOf()
+                "Sample bio"
             ))
         }
     }

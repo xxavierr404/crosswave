@@ -4,6 +4,7 @@ import com.xxavierr404.crosswave.analytics.dao.UserProfileDao
 import com.xxavierr404.crosswave.analytics.kafka.processors.AuthEventsProcessor
 import com.xxavierr404.crosswave.kafka.events.model.auth.AuthEvent
 import com.xxavierr404.crosswave.kafka.events.model.music.MusicEvent
+import com.xxavierr404.crosswave.kafka.events.model.social.SocialEvent
 import org.apache.kafka.clients.admin.NewTopic
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.clients.producer.ProducerConfig
@@ -78,7 +79,33 @@ class KafkaConfiguration {
     }
 
     @Bean
-    fun producerFactory(): ProducerFactory<UUID, MusicEvent> {
+    fun socialEventConsumerFactory(): ConsumerFactory<UUID, SocialEvent> {
+        val props: MutableMap<String, Any> = HashMap()
+        props[ConsumerConfig.GROUP_ID_CONFIG] = "analytics-group"
+        props[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = bootstrapAddress
+
+        val deserializer = JsonDeserializer<SocialEvent>()
+        deserializer.addTrustedPackages(
+            "com.xxavierr404.crosswave.kafka.events.model.social"
+        )
+
+        return DefaultKafkaConsumerFactory(props, UUIDDeserializer(), deserializer)
+    }
+
+    @Bean
+    fun socialEventKafkaListenerContainerFactory(): ConcurrentKafkaListenerContainerFactory<UUID, SocialEvent> {
+        val factory = ConcurrentKafkaListenerContainerFactory<UUID, SocialEvent>()
+        factory.consumerFactory = socialEventConsumerFactory()
+        return factory
+    }
+
+    @Bean
+    fun musicEventProducerFactory(): ProducerFactory<UUID, MusicEvent> {
+        return DefaultKafkaProducerFactory(producerConfigs())
+    }
+
+    @Bean
+    fun socialEventProducerFactory(): ProducerFactory<UUID, SocialEvent> {
         return DefaultKafkaProducerFactory(producerConfigs())
     }
 
@@ -100,6 +127,11 @@ class KafkaConfiguration {
 
     @Bean
     fun musicEventKafkaTemplate(): KafkaTemplate<UUID, MusicEvent> {
-        return KafkaTemplate(producerFactory())
+        return KafkaTemplate(musicEventProducerFactory())
+    }
+
+    @Bean
+    fun socialEventKafkaTemplate(): KafkaTemplate<UUID, SocialEvent> {
+        return KafkaTemplate(socialEventProducerFactory())
     }
 }

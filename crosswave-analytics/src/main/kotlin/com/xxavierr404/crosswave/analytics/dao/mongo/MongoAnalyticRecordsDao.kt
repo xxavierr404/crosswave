@@ -17,4 +17,5 @@ private fun AnalyticRecord.toMongo() = MongoAnalyticRecord(
     eventType,
     userId,
     trackId,
+    targetUserId,
 )
