@@ -1,0 +1,16 @@
+README.md
+pom.xml
+src/gen/kotlin/main/org/openapitools/Application.kt
+src/gen/kotlin/main/org/openapitools/HomeController.kt
+src/gen/kotlin/main/org/openapitools/SpringDocConfiguration.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/auth/api/apis/ApiUtil.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/auth/api/apis/AuthApiController.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/auth/api/apis/Exceptions.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/auth/api/models/ErrorDto.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/auth/api/models/GetTokenDto.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/auth/api/models/LoginRequestDto.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/auth/api/models/RegisterDto.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/auth/api/models/TokenResponseDto.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/auth/api/models/UserDataDto.kt
+src/main/resources/application.yaml
+src/main/resources/openapi.yaml

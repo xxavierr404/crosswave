@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/crosswave-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-music/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-auth-openapi/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-auth-openapi-client/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-auth-lib/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-auth-openapi/crosswave-auth-openapi-client/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-music-openapi/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-service-discovery/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-auth-jwt-lib/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-analytics/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-analytics-openapi/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-kafka-events-lib/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-ai-adapter/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-ai-openapi/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/crosswave-ai-adapter/pom.xml" />
+        <option value="$PROJECT_DIR$/crosswave-auth-lib/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" project-jdk-name="21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

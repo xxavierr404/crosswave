@@ -1,0 +1,12 @@
+README.md
+pom.xml
+src/gen/kotlin/main/org/openapitools/Application.kt
+src/gen/kotlin/main/org/openapitools/HomeController.kt
+src/gen/kotlin/main/org/openapitools/SpringDocConfiguration.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/apis/ApiUtil.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/apis/Exceptions.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/apis/MusicApiController.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/models/ErrorDto.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/models/TrackInfo.kt
+src/main/resources/application.yaml
+src/main/resources/openapi.yaml

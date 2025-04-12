@@ -1,0 +1,182 @@
+openapi: 3.0.0
+info:
+  description: Crosswave Auth service
+  title: Crosswave Auth
+  version: 0.0.1
+servers:
+- url: localhost:8080
+paths:
+  /auth/v1/get-token:
+    post:
+      description: Авторизация пользователя по логину и паролю.
+      operationId: getToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetTokenDto'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponseDto'
+          description: Успешный вход в систему
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Некорректные данные для входа
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Неверные логин или пароль
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Вход в систему
+  /auth/v1/register:
+    post:
+      description: Создание нового пользователя.
+      operationId: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterDto'
+        required: true
+      responses:
+        "201":
+          description: Пользователь успешно зарегистрирован
+        "400":
+          description: Некорректные данные для регистрации
+        "409":
+          description: Пользователь с таким именем уже существует
+        "500":
+          description: Ошибка сервера
+      summary: Регистрация пользователя
+  /auth/v1/login:
+    post:
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequestDto'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDataDto'
+          description: Успешный выход из системы
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка в токене
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Чтение данных о пользователе по токену
+components:
+  schemas:
+    GetTokenDto:
+      example:
+        password: securepassword123
+        username: cool_musiciannnn
+      properties:
+        username:
+          description: Имя пользователя
+          example: cool_musiciannnn
+          type: string
+        password:
+          description: Пароль пользователя
+          example: securepassword123
+          type: string
+      required:
+      - password
+      - username
+      type: object
+    TokenResponseDto:
+      example:
+        token: xxxxxx.xxxxxx.xxxxxx
+      properties:
+        token:
+          description: JWT-токен авторизации
+          example: xxxxxx.xxxxxx.xxxxxx
+          type: string
+      required:
+      - token
+      type: object
+    ErrorDto:
+      example:
+        code: 0
+        message: message
+      properties:
+        code:
+          description: Код ошибки
+          type: integer
+        message:
+          description: Описание ошибки
+          type: string
+      required:
+      - code
+      - message
+      type: object
+    RegisterDto:
+      example:
+        password: securepassword123
+        email: john.doe@example.com
+        username: john_doe
+      properties:
+        username:
+          description: Имя пользователя
+          example: john_doe
+          type: string
+        password:
+          description: Пароль пользователя
+          example: securepassword123
+          type: string
+        email:
+          description: Электронная почта
+          example: john.doe@example.com
+          type: string
+      required:
+      - email
+      - password
+      - username
+      type: object
+    LoginRequestDto:
+      example:
+        token: xxxxxx.xxxxxx.xxxxxx
+      properties:
+        token:
+          description: JWT-токен авторизации
+          example: xxxxxx.xxxxxx.xxxxxx
+          type: string
+      required:
+      - token
+      type: object
+    UserDataDto:
+      example:
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+      required:
+      - id
+      type: object

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/crosswave-ai-adapter/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-ai-openapi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-ai-openapi/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-analytics-openapi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-analytics-openapi/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-analytics/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-jwt-lib/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-lib/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-lib/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-openapi/crosswave-auth-openapi-client/src/gen/kotlin/main" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-openapi/crosswave-auth-openapi-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-openapi/crosswave-auth-openapi-client/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-openapi/crosswave-auth-openapi-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-openapi/crosswave-auth-openapi-client/target/generated-sources/openapi/src/gen/kotlin/main" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-openapi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-openapi/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-openapi/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth-openapi/target/generated-sources/openapi/src/gen/kotlin/main" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-auth/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-gateway/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-kafka-events-lib/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-music-openapi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-music-openapi/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-music-openapi/target/generated-sources/openapi/src/gen/kotlin/main" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-music/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crosswave-service-discovery/src/main/kotlin" charset="UTF-8" />
+  </component>
+</project>

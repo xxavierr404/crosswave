@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="crosswave.service.discovery" />
+        <module name="crosswave-analytics" />
+        <module name="crosswave-auth-openapi-client" />
+        <module name="crosswave-music-openapi" />
+        <module name="crosswave-ai-openapi" />
+        <module name="crosswave-auth-openapi" />
+        <module name="crosswave-kafka-events-lib" />
+        <module name="crosswave-music" />
+        <module name="crosswave-auth-jwt-lib" />
+        <module name="crosswave-gateway" />
+        <module name="crosswave-analytics-openapi" />
+        <module name="crosswave-auth" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="crosswave-ai-adapter" target="21" />
+      <module name="crosswave-auth-lib" target="1.8" />
+      <module name="crosswave-auth-openapi (1)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="crosswave-ai-adapter" options="-parameters" />
+      <module name="crosswave-analytics" options="-parameters" />
+      <module name="crosswave-auth" options="-parameters" />
+      <module name="crosswave-auth-jwt-lib" options="-parameters" />
+      <module name="crosswave-gateway" options="-parameters" />
+      <module name="crosswave-kafka-events-lib" options="-parameters" />
+      <module name="crosswave-music" options="-parameters" />
+      <module name="crosswave.service.discovery" options="-parameters" />
+    </option>
+  </component>
+</project>

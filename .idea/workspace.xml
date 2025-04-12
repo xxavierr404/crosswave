@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4426f5a6-c386-475a-89b2-8279b2c00255" name="Changes" comment="Final changes">
+      <change afterPath="$PROJECT_DIR$/crosswave-ai-service/src/recommendations/data_input/analytics.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/schema/dto/TrackInfo.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/schema/dto/UserProfileDto.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/schema/endpoints/friends.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/schema/endpoints/friends.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/schema/endpoints/tracks.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/schema/endpoints/tracks.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/.openapi-generator/FILES" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/.openapi-generator/FILES" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/.openapi-generator/api.yaml-default.sha256" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/.openapi-generator/api.yaml-default.sha256" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/src/load_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/model_architecture.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/src/model_architecture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/src/predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-analytics/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-analytics/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-analytics/src/main/kotlin/com/xxavierr404/crosswave/analytics/cron/AnalyticsDumpCronTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-analytics/src/main/kotlin/com/xxavierr404/crosswave/analytics/cron/AnalyticsDumpCronTask.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-auth/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-auth/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-music/src/main/kotlin/com/xxavierr404/crosswave/music/service/MusicService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-music/src/main/kotlin/com/xxavierr404/crosswave/music/service/MusicService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;xxavierr404&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/xxavierr404/crosswave.git&quot;,
+    &quot;accountId&quot;: &quot;edecca40-a5dc-4ab5-b6e7-ac85e14f320c&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/jdk/internal/loader/BuiltinClassLoader.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/5.0.1/mongodb-driver-core-5.0.1.jar!/com/mongodb/KotlinCodecProvider.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/5.0.1/mongodb-driver-core-5.0.1.jar!/com/mongodb/MongoClientSettings.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/5.2.1/mongodb-driver-core-5.2.1.jar!/com/mongodb/MongoClientSettings.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/3.3.0/spring-boot-autoconfigure-3.3.0.jar!/org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2vBrRASGEf4i2IvwD8bfKBglxZd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Explyt Spring.CrosswaveApplicationKt.executor&quot;: &quot;Run&quot;,
+    &quot;Explyt Spring.CrosswaveMusicApplicationKt.executor&quot;: &quot;Run&quot;,
+    &quot;Explyt Spring.com.xxavierr404.crosswave.music.CrosswaveMusicApplicationKt.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JwtServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProfileServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.CrosswaveMusicApplicationKt.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-ai-openapi [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-ai-openapi [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-analytics-openapi [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-analytics-openapi [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-jwt-lib [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-jwt-lib [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-lib [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-lib [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-lib [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-openapi [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-openapi [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-openapi [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-openapi [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-openapi-client [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-openapi-client [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-auth-openapi-client [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-gateway [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-kafka-events-lib [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music [org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music [org.jetbrains.kotlin:kotlin-maven-plugin:1.9.25:compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music-openapi [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music-openapi [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music-openapi [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crosswave-music-openapi [verify].executor&quot;: &quot;Run&quot;,
+    &quot;NotificationExplytEndpoints&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/crosswave/crosswave-ai-openapi&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3770115&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\crosswave\crosswave-auth-openapi" />
+      <recent name="D:\code\crosswave\crosswave-ai-openapi\schema\endpoints" />
+      <recent name="D:\code\crosswave\crosswave-ai-adapter" />
+      <recent name="D:\code\crosswave\crosswave-ai-openapi\schema\dto" />
+      <recent name="D:\code\crosswave" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\crosswave" />
+      <recent name="D:\code\crosswave\crosswave-music-openapi" />
+      <recent name="D:\code\crosswave\crosswave-auth-openapi" />
+      <recent name="D:\code\crosswave\crosswave-auth-openapi\src\main\resources" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.xxavierr404.crosswave.analytics.kafka.processors" />
+      <recent name="com.xxavierr404.crosswave.kafka.events.model.music" />
+      <recent name="com.xxavierr404.crosswave.auth.service" />
+      <recent name="com.xxavierr404.crosswave.auth.domain" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.xxavierr404.crosswave.analytics" />
+      <recent name="com.xxavierr404.crosswave.music.configuration" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn compile" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.AuthServiceTest">
+    <configuration name="AuthServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crosswave-auth" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxavierr404.crosswave.auth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxavierr404.crosswave.auth" />
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.auth.AuthServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JwtServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crosswave-auth-jwt-lib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxavierr404.crosswave.jwt.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxavierr404.crosswave.jwt.service" />
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.jwt.service.JwtServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crosswave-analytics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxavierr404.crosswave.analytics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxavierr404.crosswave.analytics" />
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.analytics.ProfileServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrosswaveMusicApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.music.CrosswaveMusicApplicationKt" />
+      <module name="crosswave-music" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationKt" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.openapitools.ApplicationKt" />
+      <module name="crosswave-auth-openapi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrosswaveAiAdapterApplicationKt" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.ai.adapter.CrosswaveAiAdapterApplicationKt" />
+      <module name="crosswave-ai-adapter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrosswaveAnalyticsApplicationKt" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.analytics.CrosswaveAnalyticsApplicationKt" />
+      <module name="crosswave-analytics" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrosswaveApplicationKt" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.auth.CrosswaveApplicationKt" />
+      <module name="crosswave-auth" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrosswaveGatewayApplicationKt" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave_gateway.CrosswaveGatewayApplicationKt" />
+      <module name="crosswave-gateway" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrosswaveMusicApplicationKt" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave_music.CrosswaveMusicApplicationKt" />
+      <module name="crosswave-music" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.xxavierr404.crosswave.gateway.CrosswaveGatewayApplicationKt" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.gateway.CrosswaveGatewayApplicationKt" />
+      <module name="crosswave-gateway" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.xxavierr404.crosswave.music.CrosswaveMusicApplicationKt" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.music.CrosswaveMusicApplicationKt" />
+      <module name="crosswave-music" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.xxavierr404.crosswave.service.discovery.ApplicationKt" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xxavierr404.crosswave.service.discovery.ApplicationKt" />
+      <module name="crosswave.service.discovery" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AuthServiceTest" />
+        <item itemvalue="JUnit.ProfileServiceTest" />
+        <item itemvalue="JUnit.JwtServiceTest" />
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="Kotlin.CrosswaveMusicApplicationKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4426f5a6-c386-475a-89b2-8279b2c00255" name="Changes" comment="" />
+      <created>1743629299709</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743629299709</updated>
+      <workItem from="1743629300517" duration="11000" />
+    </task>
+    <task id="LOCAL-00001" summary="Separated maven modules">
+      <option name="closed" value="true" />
+      <created>1743709506287</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743709506287</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added auth filter lib">
+      <option name="closed" value="true" />
+      <created>1743710636509</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743710636509</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Modules structure refactoring">
+      <option name="closed" value="true" />
+      <created>1743714501594</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743714501594</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed compilation dependencies">
+      <option name="closed" value="true" />
+      <created>1743853716509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743853716509</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed docker compose deploy">
+      <option name="closed" value="true" />
+      <created>1743857168178</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743857168178</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Created eureka &amp; api-gateway services">
+      <option name="closed" value="true" />
+      <created>1743865110855</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743865110855</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Created gateway filter for auth">
+      <option name="closed" value="true" />
+      <created>1743878120299</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743878120299</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Created music service">
+      <option name="closed" value="true" />
+      <created>1743881910524</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743881910524</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Created music service">
+      <option name="closed" value="true" />
+      <created>1743952595527</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743952595528</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added kafka">
+      <option name="closed" value="true" />
+      <created>1743971062339</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1743971062339</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added message publishing &amp; consuming for profiles and music">
+      <option name="closed" value="true" />
+      <created>1744078972038</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744078972038</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added analytics saving from topic messages">
+      <option name="closed" value="true" />
+      <created>1744080221896</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744080221896</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added analytics saving from topic messages">
+      <option name="closed" value="true" />
+      <created>1744137512484</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744137512484</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added social events">
+      <option name="closed" value="true" />
+      <created>1744328531246</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1744328531246</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added ai adapter stub service">
+      <option name="closed" value="true" />
+      <created>1744440940039</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1744440940039</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added genre recognition feature">
+      <option name="closed" value="true" />
+      <created>1744447048433</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1744447048433</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added tests">
+      <option name="closed" value="true" />
+      <created>1744462068833</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744462068833</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Final changes">
+      <option name="closed" value="true" />
+      <created>1744476415663</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1744476415663</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Final changes">
+      <option name="closed" value="true" />
+      <created>1744480047567</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1744480047567</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Separated maven modules" />
+    <MESSAGE value="Added auth filter lib" />
+    <MESSAGE value="Modules structure refactoring" />
+    <MESSAGE value="Fixed compilation dependencies" />
+    <MESSAGE value="Fixed docker compose deploy" />
+    <MESSAGE value="Created eureka &amp; api-gateway services" />
+    <MESSAGE value="Created gateway filter for auth" />
+    <MESSAGE value="Created music service" />
+    <MESSAGE value="Added kafka" />
+    <MESSAGE value="Added message publishing &amp; consuming for profiles and music" />
+    <MESSAGE value="Added analytics saving from topic messages" />
+    <MESSAGE value="Added social events" />
+    <MESSAGE value="Added ai adapter stub service" />
+    <MESSAGE value="Added genre recognition feature" />
+    <MESSAGE value="Added tests" />
+    <MESSAGE value="Final changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/crosswave-auth/src/main/kotlin/com/xxavierr404/crosswave/auth/service/AuthService.kt</url>
+          <line>46</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

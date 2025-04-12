@@ -1,0 +1,181 @@
+openapi: 3.0.0
+info:
+  description: Crosswave Music file service
+  title: Crosswave Music
+  version: 0.0.1
+servers:
+- url: localhost:8080
+paths:
+  /music/v1/upload:
+    post:
+      operationId: upload
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/upload_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackInfo'
+          description: Информация о загруженном треке
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Пользователь не авторизован
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Загрузить трек
+  /music/v1/play:
+    get:
+      operationId: stream
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      - in: query
+        name: trackId
+        required: true
+        schema:
+          format: UUID
+          type: string
+      - in: query
+        name: offset
+        required: true
+        schema:
+          type: integer
+      - in: query
+        name: length
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          content:
+            audio/mpeg:
+              schema:
+                format: binary
+                type: string
+          description: Файл трека
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Потоковое вещание трека
+  /music/v1/get-info:
+    get:
+      operationId: getInfo
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      - in: query
+        name: trackId
+        required: true
+        schema:
+          format: UUID
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackInfo'
+          description: Информация о треке
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Получить информацию о треке
+components:
+  schemas:
+    TrackInfo:
+      example:
+        uploaderId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        author: author
+        name: name
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+        uploaderId:
+          format: uuid
+          type: string
+        author:
+          type: string
+        name:
+          type: string
+      required:
+      - author
+      - id
+      - name
+      - uploaderId
+      type: object
+    ErrorDto:
+      example:
+        code: 0
+        message: message
+      properties:
+        code:
+          description: Код ошибки
+          type: integer
+        message:
+          description: Описание ошибки
+          type: string
+      required:
+      - code
+      - message
+      type: object
+    upload_request:
+      properties:
+        file:
+          format: binary
+          type: string
+        author:
+          type: string
+        name:
+          type: string
+      required:
+      - author
+      - file
+      - name
+      type: object

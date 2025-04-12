@@ -1,0 +1,297 @@
+openapi: 3.0.0
+info:
+  description: Crosswave Analytics and profiles service
+  title: Crosswave Analytics
+  version: 0.0.1
+servers:
+- url: localhost:8080
+paths:
+  /profile/v1/get:
+    get:
+      operationId: getProfile
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      - in: query
+        name: userId
+        required: true
+        schema:
+          format: UUID
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfileDto'
+          description: Информация о пользователе
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Получить данные о профиле
+  /profile/v1/update:
+    post:
+      operationId: updateProfile
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserProfileDto'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfileDto'
+          description: Информация о пользователе
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Обновить данные о профиле
+  /profile/v1/like:
+    post:
+      operationId: likeTrack
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      - in: query
+        name: trackId
+        required: true
+        schema:
+          format: UUID
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfileDto'
+          description: Информация о пользователе
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Добавить трек в любимые
+  /profile/v1/dislike:
+    post:
+      operationId: dislikeTrack
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      - in: query
+        name: trackId
+        required: true
+        schema:
+          format: UUID
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfileDto'
+          description: Информация о пользователе
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Удалить трек из любимых
+  /profile/v1/subscribe:
+    post:
+      operationId: subscribe
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      - in: query
+        name: targetUserId
+        required: true
+        schema:
+          format: UUID
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfileDto'
+          description: Информация о пользователе
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Подписаться на пользователя
+  /profile/v1/unsubscribe:
+    post:
+      operationId: unsubscribe
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      - in: query
+        name: targetUserId
+        required: true
+        schema:
+          format: UUID
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfileDto'
+          description: Информация о пользователе
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Отписаться от пользователя
+components:
+  schemas:
+    UserProfileDto:
+      example:
+        subscriptions:
+        - subscriptions
+        - subscriptions
+        likedTracks:
+        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        surname: surname
+        name: name
+        bio: bio
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+        name:
+          type: string
+        surname:
+          type: string
+        bio:
+          type: string
+        likedTracks:
+          items:
+            format: uuid
+            type: string
+          type: array
+        subscriptions:
+          items:
+            description: TODO default missing array inner type to string
+            type: string
+          type: array
+      required:
+      - bio
+      - id
+      - likedTracks
+      - name
+      - surname
+      type: object
+    ErrorDto:
+      example:
+        code: 0
+        message: message
+      properties:
+        code:
+          description: Код ошибки
+          type: integer
+        message:
+          description: Описание ошибки
+          type: string
+      required:
+      - code
+      - message
+      type: object
+    UpdateUserProfileDto:
+      example:
+        surname: surname
+        name: name
+        bio: bio
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
+        bio:
+          type: string
+      required:
+      - bio
+      - name
+      - surname
+      type: object
