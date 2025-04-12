@@ -5,7 +5,6 @@ import torchaudio
 from load_data import transform, dataset
 from model_architecture import model, device
 
-
 def predict_genre(model, audio_path, transform, device, class_names):
     waveform, sample_rate = torchaudio.load(audio_path)
 

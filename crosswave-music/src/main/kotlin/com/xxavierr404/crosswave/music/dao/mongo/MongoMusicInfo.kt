@@ -10,6 +10,7 @@ data class MongoMusicInfo(
     val uploaderId: UUID,
     val author: String,
     val name: String,
+    val genre: String
 )
 
 fun MongoMusicInfo.toModel() = MusicInfo(
@@ -17,11 +18,13 @@ fun MongoMusicInfo.toModel() = MusicInfo(
     uploaderId,
     author,
     name,
+    genre
 )
 
 fun MusicInfo.toMongo() = MongoMusicInfo(
-    this.id,
-    this.uploaderId,
-    this.author,
-    this.name,
+    id,
+    uploaderId,
+    author,
+    name,
+    genre
 )

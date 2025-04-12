@@ -4,7 +4,6 @@ import torch
 import torchaudio
 from torch.utils.data import Dataset, DataLoader
 
-
 class MusicGenreDataset(Dataset):
     def __init__(self, root_dir, transform=None, target_sample_rate=22050, num_samples=22050 * 30):
         self.root_dir = root_dir

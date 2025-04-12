@@ -7,8 +7,6 @@ services:
       MONGO_INITDB_DATABASE: crosswave
     networks:
       - main_net
-    volumes:
-      - "mongodb:/data/db"
 
   eureka:
     build:
@@ -75,7 +73,7 @@ services:
     build:
       context: crosswave-ai-service
     environment:
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
+      EUREKA_SERVER: "http://eureka:8761/eureka"
     networks:
       - main_net
     volumes:
@@ -109,6 +107,3 @@ services:
 
 networks:
   main_net:
-
-volumes:
-  mongodb:

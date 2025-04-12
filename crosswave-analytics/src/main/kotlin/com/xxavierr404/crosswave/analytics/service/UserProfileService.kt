@@ -45,6 +45,9 @@ class UserProfileService(
     }
 
     fun subscribe(subscriber: UUID, userId: UUID) {
+        if (subscriber == userId) {
+            throw IllegalArgumentException("Can't subscribe to self")
+        }
         userProfileDao.subscribe(subscriber, userId)
         socialKafka.send(
             "profile-events",
@@ -58,6 +61,9 @@ class UserProfileService(
     }
 
     fun unsubscribe(subscriber: UUID, userId: UUID) {
+        if (subscriber == userId) {
+            throw IllegalArgumentException("Can't unsubscribe from self")
+        }
         userProfileDao.unsubscribe(subscriber, userId)
         socialKafka.send(
             "profile-events",

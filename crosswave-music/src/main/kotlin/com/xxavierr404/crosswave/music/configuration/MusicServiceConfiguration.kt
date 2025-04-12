@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
 import org.springframework.kafka.core.KafkaTemplate
+import org.springframework.web.reactive.function.client.WebClient
 import org.xxavierr404.crosswave.ai.client.apis.DefaultApi
 import java.util.*
 
@@ -16,7 +17,10 @@ import java.util.*
 class MusicServiceConfiguration {
     @Bean
     @LoadBalanced
-    fun aiClient() = DefaultApi("lb://crosswave-ai")
+    fun aiClientBuilder() = WebClient.builder().baseUrl("lb://crosswave-ai")
+
+    @Bean
+    fun aiClient(loadBalancedClientBuilder: WebClient.Builder) = DefaultApi(loadBalancedClientBuilder.build())
 
     @Bean
     fun musicService(

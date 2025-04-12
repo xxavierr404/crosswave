@@ -53,5 +53,5 @@ class GenreCNN(nn.Module):
 
         return x
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 model = GenreCNN(num_classes=len(dataset.classes)).to(device)

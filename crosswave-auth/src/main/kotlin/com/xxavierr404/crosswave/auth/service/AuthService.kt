@@ -42,7 +42,7 @@ class AuthService(
                 "auth-events",
                 UUID.randomUUID(),
                 AuthEvent(AuthEventType.REGISTER, id)
-            ).join()
+            )
         } catch (exception: Exception) {
             userCredentialsDao.deleteUser(id)
         }
