@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4426f5a6-c386-475a-89b2-8279b2c00255" name="Changes" comment="Final changes">
-      <change afterPath="$PROJECT_DIR$/crosswave-ai-service/src/recommendations/data_input/analytics.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/schema/dto/TrackInfo.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/schema/dto/UserProfileDto.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/schema/endpoints/friends.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/schema/endpoints/friends.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/schema/endpoints/tracks.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/schema/endpoints/tracks.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/.openapi-generator/FILES" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/.openapi-generator/FILES" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/.openapi-generator/api.yaml-default.sha256" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/.openapi-generator/api.yaml-default.sha256" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-openapi/target/generated-sources/openapi/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/src/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/model_architecture.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/src/model_architecture.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/src/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-analytics/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-analytics/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-analytics/src/main/kotlin/com/xxavierr404/crosswave/analytics/cron/AnalyticsDumpCronTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-analytics/src/main/kotlin/com/xxavierr404/crosswave/analytics/cron/AnalyticsDumpCronTask.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-auth/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-auth/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-music/src/main/kotlin/com/xxavierr404/crosswave/music/service/MusicService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-music/src/main/kotlin/com/xxavierr404/crosswave/music/service/MusicService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -454,7 +437,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744480047567</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Final changes">
+      <option name="closed" value="true" />
+      <created>1744480234007</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1744480234007</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
