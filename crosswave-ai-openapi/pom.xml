@@ -69,10 +69,10 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/../schema/api.yaml</inputSpec>
+                            <inputSpec>${project.basedir}/schema/api.yaml</inputSpec>
                             <generatorName>kotlin</generatorName>
                             <configOptions>
-                                <packageName>org.xxavierr404.crosswave.auth.client</packageName>
+                                <packageName>org.xxavierr404.crosswave.ai.client</packageName>
                                 <sourceFolder>src/gen/kotlin/main</sourceFolder>
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <library>jvm-spring-webclient</library>
@@ -134,6 +134,11 @@
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+            <version>6.2.5</version>
         </dependency>
     </dependencies>
 </project>

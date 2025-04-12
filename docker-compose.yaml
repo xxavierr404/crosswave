@@ -7,6 +7,8 @@ services:
       MONGO_INITDB_DATABASE: crosswave
     networks:
       - main_net
+    volumes:
+      - "mongodb:/data/db"
 
   eureka:
     build:
@@ -71,14 +73,13 @@ services:
 
   ai:
     build:
-      context: .
-      dockerfile: ./crosswave-ai-adapter/Dockerfile
+      context: crosswave-ai-service
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
     networks:
       - main_net
     volumes:
-      - "./dumps:/dumps"
+      - "./dumps:/app/recommendations/data_input"
 
   kafka:
     image: apache/kafka-native:4.0.0
@@ -108,3 +109,6 @@ services:
 
 networks:
   main_net:
+
+volumes:
+  mongodb:

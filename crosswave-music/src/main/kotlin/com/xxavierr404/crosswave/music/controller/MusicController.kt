@@ -42,12 +42,10 @@ class MusicController(
         val trackId = UUID.randomUUID()
         val userId = UUID.fromString(xUserId)
         musicService.uploadTrack(
-            MusicInfo(
-                trackId,
-                userId,
-                author,
-                name,
-            ),
+            trackId,
+            userId,
+            author,
+            name,
             file.bytes
         )
 

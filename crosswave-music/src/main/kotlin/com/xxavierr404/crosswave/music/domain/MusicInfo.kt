@@ -7,4 +7,5 @@ data class MusicInfo(
     val uploaderId: UUID,
     val author: String,
     val name: String,
+    val genre: String,
 )

@@ -84,6 +84,11 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>4.2.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.xxavierr404</groupId>
+			<artifactId>crosswave-ai-openapi</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>

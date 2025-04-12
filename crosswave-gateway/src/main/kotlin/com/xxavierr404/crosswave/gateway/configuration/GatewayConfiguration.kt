@@ -47,6 +47,17 @@ class GatewayConfiguration {
                         .filter(enrichWithUserDataFilter.apply(""))
                 }
                 .uri("lb://crosswave-analytics")
+        }
+        .route("suggest") { route ->
+            route.path("/suggest/**")
+                .filters {
+                    val userIdHeader = NameConfig()
+                    userIdHeader.name = "X-User-Id"
+                    it
+                        .filter(RemoveRequestHeaderGatewayFilterFactory().apply(userIdHeader))
+                        .filter(enrichWithUserDataFilter.apply(""))
+                }
+                .uri("lb://crosswave-ai")
         }.build()
 
     @Bean
