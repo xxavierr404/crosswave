@@ -1,9 +1,11 @@
 import torch
 import torch.nn.functional as F
 import torchaudio
+from networkx.utils.backends import backends
 
-from load_data import transform, dataset
+from load_data import transform
 from model_architecture import model, device
+
 
 def predict_genre(model, audio_path, transform, device, class_names):
     waveform, sample_rate = torchaudio.load(audio_path)
@@ -33,5 +35,15 @@ def predict(audio_path: str):
     model.load_state_dict(torch.load("best_model_genre.pth"))
     model.to(device)
 
-    genre, confidence = predict_genre(model, audio_path, transform, device, dataset.classes)
+    genre, confidence = predict_genre(model, audio_path, transform, device, [
+        'blues',
+        'classical',
+        'electronic',
+        'funk & soul',
+        'jazz',
+        'latin',
+        'pop',
+        'reggae',
+        'rock'
+    ])
     return genre

@@ -1,11 +1,8 @@
-.openapi-generator-ignore
 README.md
 build.gradle
 docs/DefaultApi.md
 docs/ErrorDto.md
 docs/GenrePredictionDto.md
-docs/TrackInfo.md
-docs/UserProfileDto.md
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
 gradlew
@@ -20,10 +17,3 @@ src/gen/kotlin/main/org/xxavierr404/crosswave/ai/client/infrastructure/RequestMe
 src/gen/kotlin/main/org/xxavierr404/crosswave/ai/client/infrastructure/Serializer.kt
 src/gen/kotlin/main/org/xxavierr404/crosswave/ai/client/models/ErrorDto.kt
 src/gen/kotlin/main/org/xxavierr404/crosswave/ai/client/models/GenrePredictionDto.kt
-src/gen/kotlin/main/org/xxavierr404/crosswave/ai/client/models/TrackInfo.kt
-src/gen/kotlin/main/org/xxavierr404/crosswave/ai/client/models/UserProfileDto.kt
-src/test/kotlin/org/xxavierr404/crosswave/ai/client/apis/DefaultApiTest.kt
-src/test/kotlin/org/xxavierr404/crosswave/ai/client/models/ErrorDtoTest.kt
-src/test/kotlin/org/xxavierr404/crosswave/ai/client/models/GenrePredictionDtoTest.kt
-src/test/kotlin/org/xxavierr404/crosswave/ai/client/models/TrackInfoTest.kt
-src/test/kotlin/org/xxavierr404/crosswave/ai/client/models/UserProfileDtoTest.kt

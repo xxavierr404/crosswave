@@ -4,10 +4,12 @@ import com.xxavierr404.crosswave.kafka.events.model.music.MusicEvent
 import com.xxavierr404.crosswave.kafka.events.model.music.MusicEventType
 import com.xxavierr404.crosswave.music.dao.MusicDao
 import com.xxavierr404.crosswave.music.domain.MusicInfo
+import org.slf4j.LoggerFactory
 import org.springframework.kafka.core.KafkaTemplate
 import org.xxavierr404.crosswave.ai.client.apis.DefaultApi
-import java.io.File
 import java.util.*
+
+private val LOGGER = LoggerFactory.getLogger(MusicService::class.java)
 
 class MusicService(
     private val musicDao: MusicDao,
@@ -34,16 +36,21 @@ class MusicService(
         name: String,
         fileBytes: ByteArray
     ) {
-        val tempFile = File.createTempFile(UUID.randomUUID().toString(), "mp3")
-        tempFile.writeBytes(fileBytes)
-        val genreResponse = aiClient.predictGenre(tempFile).block()!!
+        val genreResponse = kotlin.runCatching {
+            aiClient.predictGenre(fileBytes).block()!!
+        }
+
+        if (genreResponse.isFailure) {
+            LOGGER.error("Failed to determine track genre automatically", genreResponse.exceptionOrNull())
+        }
+
         musicDao.create(
             MusicInfo(
                 trackId,
                 userId,
                 author,
                 name,
-                genreResponse.genre
+                genreResponse.getOrNull()?.genre ?: "unknown"
             ),
             fileBytes
         )

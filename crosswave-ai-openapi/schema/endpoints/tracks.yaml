@@ -10,13 +10,14 @@ get:
         format: UUID
   responses:
     '200':
-      description: Информация о треке
+      description: ID предлагаемых треков
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: '../dto/TrackInfo.yaml#/TrackInfo'
+              type: string
+              format: uuid
     '403':
       description: Нет доступа к треку
       content:

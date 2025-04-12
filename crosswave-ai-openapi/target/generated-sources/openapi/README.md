@@ -55,8 +55,6 @@ All URIs are relative to *http://localhost:8080*
 
  - [org.xxavierr404.crosswave.ai.client.models.ErrorDto](docs/ErrorDto.md)
  - [org.xxavierr404.crosswave.ai.client.models.GenrePredictionDto](docs/GenrePredictionDto.md)
- - [org.xxavierr404.crosswave.ai.client.models.TrackInfo](docs/TrackInfo.md)
- - [org.xxavierr404.crosswave.ai.client.models.UserProfileDto](docs/UserProfileDto.md)
 
 
 <a id="documentation-for-authorization"></a>

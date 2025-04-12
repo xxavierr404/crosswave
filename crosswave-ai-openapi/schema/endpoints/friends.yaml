@@ -10,15 +10,16 @@ get:
         format: UUID
   responses:
     '200':
-      description: Информация о треке
+      description: ID предлагаемых пользователей
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: '../dto/UserProfileDto.yaml#/UserProfileDto'
+              type: string
+              format: uuid
     '403':
-      description: Нет доступа к треку
+      description: Нет доступа
       content:
         application/json:
           schema:

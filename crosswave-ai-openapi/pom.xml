@@ -76,6 +76,7 @@
                                 <sourceFolder>src/gen/kotlin/main</sourceFolder>
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <library>jvm-spring-webclient</library>
+                                <mapFileBinaryToByteArray>true</mapFileBinaryToByteArray>
                                 <serializationLibrary>jackson</serializationLibrary>
                             </configOptions>
                         </configuration>
@@ -99,7 +100,7 @@
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
             <version>2.6.0</version>
         </dependency>
         <dependency>

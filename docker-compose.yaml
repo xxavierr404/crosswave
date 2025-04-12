@@ -73,7 +73,7 @@ services:
     build:
       context: crosswave-ai-service
     environment:
-      EUREKA_SERVER: "http://eureka:8761/eureka"
+      EUREKA_SERVER_URL: "http://eureka:8761/eureka"
     networks:
       - main_net
     volumes:

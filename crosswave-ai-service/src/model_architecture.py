@@ -2,8 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from load_data import dataset
-
 
 class GenreCNN(nn.Module):
     def __init__(self, num_classes=10):
@@ -54,4 +52,4 @@ class GenreCNN(nn.Module):
         return x
 
 device = torch.device("cpu")
-model = GenreCNN(num_classes=len(dataset.classes)).to(device)
+model = GenreCNN(num_classes=10).to(device)

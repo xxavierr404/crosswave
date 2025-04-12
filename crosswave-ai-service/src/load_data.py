@@ -1,8 +1,9 @@
 import os
-import numpy as np
+
 import torch
 import torchaudio
 from torch.utils.data import Dataset, DataLoader
+
 
 class MusicGenreDataset(Dataset):
     def __init__(self, root_dir, transform=None, target_sample_rate=22050, num_samples=22050 * 30):
@@ -49,10 +50,11 @@ transform = torchaudio.transforms.MelSpectrogram(
     n_mels=64
 )
 
-dataset = MusicGenreDataset("mp3/mp3", transform=transform)
-train_size = int(0.8 * len(dataset))
-val_size = len(dataset) - train_size
-train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
+if __name__ == "__main__":
+    dataset = MusicGenreDataset("mp3/mp3", transform=transform)
+    train_size = int(0.8 * len(dataset))
+    val_size = len(dataset) - train_size
+    train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
 
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
-val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
