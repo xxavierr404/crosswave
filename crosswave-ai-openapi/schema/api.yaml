@@ -1,0 +1,13 @@
+openapi: 3.0.0
+info:
+  title: Crosswave Music
+  description: Crosswave Music file service
+  version: 0.0.1
+servers:
+  - url: 'localhost:8080'
+paths:
+  /suggest/v1/tracks:
+    $ref: "./endpoints/tracks.yaml"
+
+  /suggest/v1/friends:
+    $ref: "./endpoints/friends.yaml"

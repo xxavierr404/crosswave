@@ -1,0 +1,31 @@
+get:
+  summary: Получить рекомендации треков
+  operationId: suggestTracks
+  parameters:
+    - name: X-User-Id
+      in: header
+      required: true
+      schema:
+        type: string
+        format: UUID
+  responses:
+    '200':
+      description: Информация о треке
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../dto/TrackInfo.yaml#/TrackInfo'
+    '403':
+      description: Нет доступа к треку
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'
+    '500':
+      description: Ошибка сервера
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'

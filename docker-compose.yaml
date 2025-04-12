@@ -66,6 +66,19 @@ services:
       SPRING_KAFKA_BOOTSTRAPSERVERS: "kafka:9092"
     networks:
       - main_net
+    volumes:
+      - "./dumps:/dumps"
+
+  ai:
+    build:
+      context: .
+      dockerfile: ./crosswave-ai-adapter/Dockerfile
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
+    networks:
+      - main_net
+    volumes:
+      - "./dumps:/dumps"
 
   kafka:
     image: apache/kafka-native:4.0.0

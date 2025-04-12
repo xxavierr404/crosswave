@@ -1,0 +1,151 @@
+openapi: 3.0.0
+info:
+  description: Crosswave Music file service
+  title: Crosswave Music
+  version: 0.0.1
+servers:
+- url: localhost:8080
+paths:
+  /suggest/v1/tracks:
+    get:
+      operationId: suggestTracks
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TrackInfo'
+                type: array
+          description: Информация о треке
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Получить рекомендации треков
+  /suggest/v1/friends:
+    get:
+      operationId: suggestUsers
+      parameters:
+      - in: header
+        name: X-User-Id
+        required: true
+        schema:
+          format: UUID
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/UserProfileDto'
+                type: array
+          description: Информация о треке
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Нет доступа к треку
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Получить рекомендации пользователей
+components:
+  schemas:
+    TrackInfo:
+      example:
+        uploaderId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        author: author
+        name: name
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+        uploaderId:
+          format: uuid
+          type: string
+        author:
+          type: string
+        name:
+          type: string
+      required:
+      - author
+      - id
+      - name
+      - uploaderId
+      type: object
+    ErrorDto:
+      example:
+        code: 0
+        message: message
+      properties:
+        code:
+          description: Код ошибки
+          type: integer
+        message:
+          description: Описание ошибки
+          type: string
+      required:
+      - code
+      - message
+      type: object
+    UserProfileDto:
+      example:
+        subscriptions:
+        - subscriptions
+        - subscriptions
+        likedTracks:
+        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        surname: surname
+        name: name
+        bio: bio
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+        name:
+          type: string
+        surname:
+          type: string
+        bio:
+          type: string
+        likedTracks:
+          items:
+            format: uuid
+            type: string
+          type: array
+        subscriptions:
+          items:
+            description: TODO default missing array inner type to string
+            type: string
+          type: array
+      required:
+      - bio
+      - id
+      - likedTracks
+      - name
+      - surname
+      type: object

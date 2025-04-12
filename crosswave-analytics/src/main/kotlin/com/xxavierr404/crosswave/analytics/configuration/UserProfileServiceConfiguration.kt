@@ -3,6 +3,7 @@ package com.xxavierr404.crosswave.analytics.configuration
 import com.xxavierr404.crosswave.analytics.dao.UserProfileDao
 import com.xxavierr404.crosswave.analytics.service.UserProfileService
 import com.xxavierr404.crosswave.kafka.events.model.music.MusicEvent
+import com.xxavierr404.crosswave.kafka.events.model.social.SocialEvent
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
@@ -18,6 +19,7 @@ class UserProfileServiceConfiguration {
     @Bean
     fun userProfileService(
         userProfileDao: UserProfileDao,
-        kafkaTemplate: KafkaTemplate<UUID, MusicEvent>
-    ) = UserProfileService(userProfileDao, kafkaTemplate)
+        musicKafka: KafkaTemplate<UUID, MusicEvent>,
+        socialKafka: KafkaTemplate<UUID, SocialEvent>,
+    ) = UserProfileService(userProfileDao, musicKafka, socialKafka)
 }

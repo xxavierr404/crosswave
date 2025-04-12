@@ -4,4 +4,5 @@ import com.xxavierr404.crosswave.analytics.domain.AnalyticRecord
 
 interface AnalyticRecordsDao {
     fun insertOne(analyticRecord: AnalyticRecord)
+    fun findAll(): List<AnalyticRecord>
 }

@@ -5,6 +5,8 @@ import com.mongodb.MongoClientSettings
 import com.mongodb.client.MongoClient
 import com.mongodb.client.MongoClients
 import com.mongodb.client.MongoCollection
+import com.xxavierr404.crosswave.analytics.cron.AnalyticsDumpCronTask
+import com.xxavierr404.crosswave.analytics.dao.AnalyticRecordsDao
 import com.xxavierr404.crosswave.analytics.dao.UserProfileDao
 import com.xxavierr404.crosswave.analytics.dao.mongo.MongoAnalyticRecord
 import com.xxavierr404.crosswave.analytics.dao.mongo.MongoAnalyticRecordsDao
@@ -16,8 +18,10 @@ import org.bson.codecs.configuration.CodecRegistries
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.scheduling.annotation.EnableScheduling
 
 @Configuration
+@EnableScheduling
 class MongoDaoConfiguration {
     @Bean
     fun mongoClient(@Value("\${crosswave.mongodb.connection-string}") connectionString: String) =
@@ -51,4 +55,7 @@ class MongoDaoConfiguration {
 
     @Bean
     fun mongoAnalyticRecordsDao(collection: MongoCollection<MongoAnalyticRecord>) = MongoAnalyticRecordsDao(collection)
+
+    @Bean
+    fun analyticsDumpCronTask(analyticRecordsDao: AnalyticRecordsDao) = AnalyticsDumpCronTask(analyticRecordsDao)
 }
