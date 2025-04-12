@@ -11,3 +11,6 @@ paths:
 
   /suggest/v1/friends:
     $ref: "./endpoints/friends.yaml"
+
+  /suggest/v1/predict-genre:
+    $ref: "./endpoints/genre.yaml"

@@ -1,0 +1,7 @@
+GenrePredictionDto:
+  type: object
+  properties:
+    genre:
+      type: string
+  required:
+    - genre

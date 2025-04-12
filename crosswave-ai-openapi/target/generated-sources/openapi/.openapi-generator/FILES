@@ -8,6 +8,7 @@ src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/apis/ApiUtil.kt
 src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/apis/Exceptions.kt
 src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/apis/SuggestApiController.kt
 src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/models/ErrorDto.kt
+src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/models/GenrePredictionDto.kt
 src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/models/TrackInfo.kt
 src/gen/kotlin/main/org/xxavierr404/crosswave/music/api/models/UserProfileDto.kt
 src/main/resources/application.yaml

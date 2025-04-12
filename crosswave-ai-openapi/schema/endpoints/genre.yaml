@@ -1,0 +1,28 @@
+post:
+  summary: Получить самый вероятный жанр трека
+  operationId: predictGenre
+  requestBody:
+    required: true
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            file:
+              type: string
+              format: binary
+          required:
+            - file
+  responses:
+    '200':
+      description: Предсказанные данные о треке
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/GenrePredictionDto.yaml#/GenrePredictionDto'
+    '500':
+      description: Ошибка сервера
+      content:
+        application/json:
+          schema:
+            $ref: '../dto/ErrorDto.yaml#/ErrorDto'

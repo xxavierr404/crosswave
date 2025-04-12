@@ -70,6 +70,35 @@ paths:
                 $ref: '#/components/schemas/ErrorDto'
           description: Ошибка сервера
       summary: Получить рекомендации пользователей
+  /suggest/v1/predict-genre:
+    post:
+      operationId: predictGenre
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/predictGenre_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenrePredictionDto'
+          description: Предсказанные данные о треке
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Пользователь не авторизован
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+          description: Ошибка сервера
+      summary: Получить самый вероятный жанр трека
 components:
   schemas:
     TrackInfo:
@@ -148,4 +177,21 @@ components:
       - likedTracks
       - name
       - surname
+      type: object
+    GenrePredictionDto:
+      example:
+        genre: genre
+      properties:
+        genre:
+          type: string
+      required:
+      - genre
+      type: object
+    predictGenre_request:
+      properties:
+        file:
+          format: binary
+          type: string
+      required:
+      - file
       type: object

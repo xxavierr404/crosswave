@@ -69,13 +69,14 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/schema/api.yaml</inputSpec>
-                            <generatorName>kotlin-spring</generatorName>
+                            <inputSpec>${project.basedir}/../schema/api.yaml</inputSpec>
+                            <generatorName>kotlin</generatorName>
                             <configOptions>
-                                <packageName>org.xxavierr404.crosswave.music.api</packageName>
+                                <packageName>org.xxavierr404.crosswave.auth.client</packageName>
                                 <sourceFolder>src/gen/kotlin/main</sourceFolder>
                                 <useSpringBoot3>true</useSpringBoot3>
-                                <gradleBuildFile>false</gradleBuildFile>
+                                <library>jvm-spring-webclient</library>
+                                <serializationLibrary>jackson</serializationLibrary>
                             </configOptions>
                         </configuration>
                     </execution>
