@@ -1,13 +1,11 @@
 import asyncio
 import os
 from contextlib import asynccontextmanager
-from uuid import uuid4
 
 import py_eureka_client.eureka_client as eureka_client
 from fastapi import FastAPI, Header, UploadFile, File
 
-from predict import predict
-from recommender import MusicRecommender
+from model import retrain, recommend
 
 EUREKA_SERVER_URL = os.environ["EUREKA_SERVER_URL"]
 APP_NAME = "crosswave-ai"
@@ -33,13 +31,13 @@ async def wait_for_eureka():
 
 async def retrain_cron():
     while True:
-        MusicRecommender(data_path="./recommendations/data_input/analytics.csv").save_model("music_recommender.pkl")
-        await asyncio.sleep(5)
+        retrain()
+        await asyncio.sleep(10)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     if not await wait_for_eureka():
-        raise RuntimeError("Eureka недоступна")
+        raise RuntimeError("Eureka is unavailable")
 
     asyncio.create_task(retrain_cron())
 
@@ -49,19 +47,13 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 @app.get("/suggest/v1/tracks")
-def recommend_tracks(user_id: str = Header("X-User-Id")):
-    return MusicRecommender(model_path="music_recommender.pkl").recommend_tracks(user_id, 5, True)
+def recommend_tracks(x_user_id: str = Header()):
+    return recommend(x_user_id, 5, 5)[1]
 
 @app.get("/suggest/v1/friends")
-def recommend_friends(user_id: str = Header("X-User-Id")):
-    return MusicRecommender(model_path="music_recommender.pkl").recommend_users(user_id, 5, True)
+def recommend_friends(x_user_id: str = Header()):
+    return recommend(x_user_id, 5, 5)[0]
 
 @app.post("/suggest/v1/predict-genre")
 async def predict_genre(file: UploadFile = File("file")):
-    fileData = await file.read()
-    filename = f'{uuid4()}.mp3'
-    with open(filename, 'wb') as f:
-        f.write(fileData)
-    result = {"genre": predict(filename)}
-    os.remove(filename)
-    return result
+    return "unknown"
