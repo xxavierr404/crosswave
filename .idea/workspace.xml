@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4426f5a6-c386-475a-89b2-8279b2c00255" name="Changes" comment="Readme">
-      <change afterPath="$PROJECT_DIR$/crosswave-ai-service/src/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crosswave-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/best_model_genre.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/load_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-ai-service/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/model_architecture.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/predict.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/recommender.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-ai-service/src/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-gateway/src/main/kotlin/com/xxavierr404/crosswave/gateway/configuration/GatewayConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-gateway/src/main/kotlin/com/xxavierr404/crosswave/gateway/configuration/GatewayConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

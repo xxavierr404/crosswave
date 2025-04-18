@@ -1,0 +1,13 @@
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    config-url: /v3/api-docs/swagger-config
+    urls:
+      - name: Authorization service
+        url: /auth/v3/api-docs
+      - name: Music service
+        url: /music/v3/api-docs
+      - name: Profiles & analytics service
+        url: /profile/v3/api-docs
