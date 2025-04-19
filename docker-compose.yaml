@@ -16,6 +16,8 @@ services:
       - "8761:8761"
     networks:
       - main_net
+    volumes:
+      - "maven_jars:/root/.m2"
 
   gateway:
     build:
@@ -27,6 +29,8 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka"
     networks:
       - main_net
+    volumes:
+      - "maven_jars:/root/.m2"
 
   auth:
     build:
@@ -40,6 +44,8 @@ services:
       SPRING_KAFKA_BOOTSTRAPSERVERS: "kafka:9092"
     networks:
       - main_net
+    volumes:
+      - "maven_jars:/root/.m2"
 
   music:
     build:
@@ -53,6 +59,8 @@ services:
       SPRING_KAFKA_BOOTSTRAPSERVERS: "kafka:9092"
     networks:
       - main_net
+    volumes:
+      - "maven_jars:/root/.m2"
 
   analytics:
     build:
@@ -68,6 +76,7 @@ services:
       - main_net
     volumes:
       - "./dumps:/dumps"
+      - "maven_jars:/root/.m2"
 
   ai:
     build:
@@ -105,3 +114,6 @@ services:
 
 networks:
   main_net:
+
+volumes:
+  maven_jars:

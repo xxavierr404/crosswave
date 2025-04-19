@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4426f5a6-c386-475a-89b2-8279b2c00255" name="Changes" comment="Readme">
-      <change afterPath="$PROJECT_DIR$/crosswave-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswave-gateway/src/main/kotlin/com/xxavierr404/crosswave/gateway/configuration/GatewayConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-gateway/src/main/kotlin/com/xxavierr404/crosswave/gateway/configuration/GatewayConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-analytics/src/main/kotlin/com/xxavierr404/crosswave/analytics/CrosswaveAnalyticsApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-analytics/src/main/kotlin/com/xxavierr404/crosswave/analytics/CrosswaveAnalyticsApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-auth/src/main/kotlin/com/xxavierr404/crosswave/auth/CrosswaveApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-auth/src/main/kotlin/com/xxavierr404/crosswave/auth/CrosswaveApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswave-music/src/main/kotlin/com/xxavierr404/crosswave/music/CrosswaveMusicApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/crosswave-music/src/main/kotlin/com/xxavierr404/crosswave/music/CrosswaveMusicApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
