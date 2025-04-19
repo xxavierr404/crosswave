@@ -12,8 +12,6 @@ services:
     build:
       context: .
       dockerfile: ./crosswave-service-discovery/Dockerfile
-      args:
-        - v "maven_jars:/root/.m2"
     ports:
       - "8761:8761"
     networks:
@@ -23,8 +21,6 @@ services:
     build:
       context: .
       dockerfile: ./crosswave-gateway/Dockerfile
-      args:
-        - v "maven_jars:/root/.m2"
     ports:
       - "80:8080"
     environment:
@@ -36,8 +32,6 @@ services:
     build:
       context: .
       dockerfile: ./crosswave-auth/Dockerfile
-      args:
-        - v "maven_jars:/root/.m2"
     depends_on:
       - mongo
     environment:
@@ -51,8 +45,6 @@ services:
     build:
       context: .
       dockerfile: ./crosswave-music/Dockerfile
-      args:
-        - v "maven_jars:/root/.m2"
     depends_on:
       - mongo
     environment:
@@ -66,8 +58,6 @@ services:
     build:
       context: .
       dockerfile: ./crosswave-analytics/Dockerfile
-      args:
-        - v "maven_jars:/root/.m2"
     depends_on:
       - mongo
     environment:
@@ -115,6 +105,3 @@ services:
 
 networks:
   main_net:
-
-volumes:
-  maven_jars:
